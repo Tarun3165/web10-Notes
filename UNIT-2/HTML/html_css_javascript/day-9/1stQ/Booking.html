@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+  #form{
+      text-align: center;
+  }
+  #form input{
+      text-align: center;
+      margin: 1VH;
+  }
+  #submit{
+      display: block;
+      margin: auto;
+  }
+  button{
+      display: block;
+      margin: auto;
+  }
+</style>
+<body>
+    
+    <h1>Book Your Ticket</h1>
+    <form id="form"> 
+        <div>
+            <label  for="">Enter No. of passangers</label>
+            <input type="text" id="Npassenger">
+        </div>
+    </form>
+        <input onclick="addPassengers()" type="submit" id="submit">   
+         <!-- in order to work this button this should be outside the form  or set e.preventDefault() -->
+   
+  
+</body>
+</html>
+<script>
+     function addPassengers()
+    { 
+        var form=document.getElementById("form")
+        var total=form.Npassenger.value;
+        var submit=document.getElementById("submit")
+        var button =document.createElement("button");
+       
+   
+
+        for(let i=1;i<=total;i++)
+        {   
+            var div=document.createElement("div");
+            var label=document.createElement("label");
+            label.innerHTML=`Enter Name of passenger ${i}`
+            var input=document.createElement("input");
+            div.append(label,input);
+            form.append(div);
+            
+            submit.remove();   //to remove a element
+            button.innerHTML=`Book your Seats`
+           document.body.append(button)
+        }
+        button.addEventListener("click",function(){
+            window.location.href="success.html";
+        
+        })
+    }
+    addPassengers();
+
+</script>

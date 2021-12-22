@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width:50%;
+        border: 12px solid red;
+        text-align: center;
+        margin: auto;
+        padding:2%;
+    }
+  #scroll{
+    width:100%;
+ 
+    overflow: scroll;
+  }
+  
+</style>
+<body>
+    <div  id="scroll">
+       
+    </div>
+</body>
+</html>
+<script>
+    let scroll=document.getElementById("scroll");
+    window.onscroll = function() {myFunction()};
+   
+    let count=0;
+    let sum=0;
+    loadMore();
+    function loadMore(){
+        for(let i=1;i<25;i++)
+        {  
+           let h=document.createElement("h3");
+           sum+=1;
+           h.innerHTML=`Masai Student ${sum}`;
+           scroll.append(h)
+        }
+    }
+
+   function myFunction(){
+     
+        const scrollable=document.documentElement.scrollHeight-window.innerHeight;
+        // console.log('scrollable:', scrollable)
+        const scrolled=window.scrollY
+        // console.log('scrolled:', scrolled)
+        if(scrolled>=scrollable-2)
+        loadMore();
+       
+   
+    }
+</script>

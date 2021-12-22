@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Marraige Age Validator</h1>
+        <label>Gender</label>
+       <select id="Gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>  
+        <br>
+        <br>
+        <label>Enter Year Of Birth</label>
+        <input id="DOB" onkeypress="showAlert(event)" type="number" placeholder="Enter YOB">
+
+    </body>
+</html>
+<script>
+   function showAlert(e){
+        
+        if(e.key=="Enter")
+       {  var DOB= document.getElementById("DOB").value;
+          var age=2021-DOB;
+          console.log(age);
+          if(age<18)
+          alert("not a valid age to get married");
+          else
+          alert("valid age to get married ");
+       }
+   }
+</script>

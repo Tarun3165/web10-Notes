@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(24,24,24);
+        padding:1%;
+        color:white;
+    }
+    #searchContainer { 
+      margin: auto;
+      width: 45%;
+      border: 1px solid white;
+      background-color: rgb(49,49,49);
+    }
+    #searchContainer > a > img {
+      height: 1rem;
+      color: white;
+      margin-left: 1.6VW;
+    }
+    #search {
+      font-size: 1.3vw; 
+      width: 89%;
+      color:white;
+      background-color: black; 
+    }
+    #videos{
+        display: grid;
+        grid-template-columns: repeat(4,23%);
+        grid-template-rows: 30VH 30VH; 
+        justify-content: space-between;
+    }
+    #box{
+        
+        width:100%;
+        margin-top: 5VH;
+        
+    }
+    #box iframe{
+        width:100%; 
+        height:100%;
+    }
+</style>
+<body>
+    
+    <div id="searchContainer">
+      <input  autocomplete="off" type="search" id="search" placeholder="&nbsp Search" />
+      <a onclick="findVideos()">
+        <img  src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDI2IDI2IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiM5MDk5OTk7fQoJLnN0MXtmaWxsOm5vbmU7ZW5hYmxlLWJhY2tncm91bmQ6bmV3ICAgIDt9Cjwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTkuMiAyLjdjMy41IDAgNi4yIDIuNyA2LjIgNi4yIDAgMy41LTIuNyA2LjItNi4yIDYuMiAtMy41IDAtNi4yLTIuNy02LjItNi4yQzIuOSA1LjUgNS43IDIuNyA5LjIgMi43ek05LjIgMC4yYy00LjkgMC04LjcgMy45LTguNyA4LjcgMCA0LjkgMy45IDguNyA4LjcgOC43IDIuMSAwIDQuMS0wLjggNS42LTJsMC42IDAuNnYxbDcuOSA3LjkgMi4xLTIuMSAtNy45LTcuOWgtMS4xbC0wLjYtMC42YzEuMy0xLjUgMi4xLTMuNSAyLjEtNS42QzE3LjkgNC4xIDE0IDAuMiA5LjIgMC4yeiAgIi8+PC9zdmc+"/>
+      </a>
+    </div> 
+
+    <div id="videos"></div>
+    
+</body>
+</html>
+<script>
+    videos_div=document.getElementById("videos");
+    async function findVideos(){
+        videos_div.innerHTML=null;
+       let search=document.getElementById("search").value;
+        let res=await fetch(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=AIzaSyAC8XAa9bkaR1yUk8QOFufrpb711oQ7K3U&maxResults=20`);
+        let data=await res.json();
+         let {items}=data;   // destructuring
+         items.forEach( ({id:{videoId}})=>{ 
+         items=items.filter((el)=>{return el.id.videoId!=undefined});
+           
+            let div=document.createElement("div");
+            div.setAttribute("id","box")
+            div.innerHTML=`<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            videos_div.appendChild(div); 
+  
+         })
+     }
+
+     async function home(){
+         let res=await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyAC8XAa9bkaR1yUk8QOFufrpb711oQ7K3U&maxResults=10`);
+         let data=await res.json();
+         
+         let {items}=data;
+         items=items.filter((el)=>{return el.id!=undefined});
+         
+         items.forEach(({id}) =>{
+
+            let div=document.createElement("div");
+            div.setAttribute("id","box")
+            div.innerHTML=`<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            videos_div.appendChild(div); 
+
+         })
+
+     }
+     home()
+</script>

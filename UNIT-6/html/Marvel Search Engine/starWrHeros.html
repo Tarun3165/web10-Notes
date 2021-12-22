@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body{
+        /* background: url("https://media0.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif?cid=ecf05e4706duk6gb006h4hj2402dxbnys8wdraqye14fw4d1&rid=giphy.gif&ct=g");
+        background-repeat: no-repeat;
+        background-size: cover; */
+        font-family: sans-serif;
+        color:yellow; 
+        padding:5%;
+     
+    }
+   .container{
+       width:38%;
+       height:500px;
+       /* border: 1px solid red; */
+       margin: auto;
+      text-align: center;
+   }
+   .details{
+       display: flex;
+       justify-content: space-between;
+       height:200px;
+   }
+   .details>div{
+       flex-basis: 45%;
+       border: 1px solid yellow;
+       border-radius: 8px;
+       background-color: black;
+   }
+   button{
+       color:yellow;
+       padding:5%;
+       background-color: black;
+       border: 1px solid yellow;
+       border-radius: 8px;
+       font-size: larger;
+       margin-top: 50px;
+   }
+   button:hover{
+      border: 1px solid white;
+      color: white;
+   }
+#anatomy:hover,.personalInfo:hover{
+    border: 1px solid white;
+      color: white;
+   }
+   #background-video {
+   height: 100vh;
+   width: 100vw;
+   object-fit: cover;
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: -1;
+}
+   
+</style>
+<body>
+    <div class="container">
+        <div>
+            <video id="background-video" autoplay muted loop >
+                <source src="stars.mp4" type="video/mp4">
+            </video>
+           </div>
+        <h1 id="heading"></h1>
+        <div class="details">
+            <div class="personalInfo" >
+                <h3>Personal Info</h3>
+            </div>
+            <div id="anatomy" >
+                <h3>Anatomy</h3>
+            </div>
+        </div>
+        <button onClick="goBack()" >Go Back</button>
+    </div>
+</body>
+</html>
+<script>
+    let heading=document.getElementById("heading")    //gives a single element
+    let personalInfo=document.getElementsByClassName("personalInfo")     // gives an array of collections
+    let anatomy=document.getElementById("anatomy")     // gives an array of collections
+    
+    let res=window.location.search;
+    let search="";
+    for(let i=1;i<res.length;i++)
+    {
+        search+=res[i];
+    }
+     
+    function goBack(){
+        window.history.back()
+    }
+    
+
+    async function searchFun(){
+         
+        let info1=document.createElement("h4")
+        let info2=document.createElement("h4")
+        let info3=document.createElement("h4")
+        let info4=document.createElement("h4")
+        let info5=document.createElement("h4")
+        let info6=document.createElement("h4")
+
+        let res=await fetch(`https://swapi.dev/api/people/`);
+        let data=await res.json(); 
+        
+        var { results}=data
+        // console.log('results:', results)
+       let arr= results.filter((el)=>{
+              return el.birth_year==search;
+        })
+        let DATA=arr[0];
+        console.log('DATA:', DATA)
+        heading.innerText=DATA.name
+        info1.innerHTML=`Birth Year : ${DATA.birth_year}`
+        info2.innerHTML=`Gender  : ${DATA.gender }`
+        info3.innerHTML=`Height  : ${DATA.height}`
+        info4.innerHTML=`Eye Color : ${DATA.eye_color}`
+        info5.innerHTML=`Mass  : ${DATA.mass}`
+        info6.innerHTML=`Hair Color : ${DATA.hair_color}`
+        personalInfo[0].append(info1,info2,info3)
+        anatomy.append(info4,info5,info6)
+    }
+    searchFun();
+</script>

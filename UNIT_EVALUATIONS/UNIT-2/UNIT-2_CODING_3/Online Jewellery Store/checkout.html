@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Enter Card Details</h1>
+    <div id="payment">  
+        <div>
+            <label for="">Enter your Card Number</label>
+            <input type="text" name="" id="" placeholder="16-Digit Number">
+        </div>
+        <div> 
+             <label for="">Enter Expiry Date</label>
+             <input type="text" name="" id="" placeholder="MM\YY">
+        </div>
+    
+         <div>
+             <label for="">Enter CVV </label>
+            <input type="text" name="" id="" placeholder="CVV">
+         </div>
+         <button onclick="payNow()" id="payNow">PayNow</button>
+    </div>
+</body>
+</html>
+<script>
+    function payNow()
+    {
+       setTimeout(function (){
+        alert("Your order is successfully placed");
+       },3000)
+        
+    }
+
+</script>

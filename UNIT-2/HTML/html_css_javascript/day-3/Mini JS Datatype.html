@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+  
+    <button onmouseover="Objects()">Objects</button>
+    <button onmouseover="Arrays()">Arrays</button>
+    <button onmouseover="Functions()">Functions</button>
+    <button onmouseover="Strings()">Strings</button>
+    <button onmouseover="Numbers()">Numbers</button>
+    <button onmouseover="Undefined()">Undefined</button>
+    <button onmouseover="Null()">Null</button>
+  
+    <div id="container"></div>
+
+</body>
+</html>
+
+<script>
+     
+     var container=document.getElementById("container")   // variable are hoisted to the top of their scope
+      var para=document.createElement("para");
+
+    function Objects()    // function declarations  are hoisted to the top of their scope
+    {   para.style.color="red";
+      para.innerHTML=` <ul>
+                         <li> An object is a collection of properties, and a property is an association between a name (or key) and a value</li>
+                         <li>In JavaScript, almost "everything" is an object.</li>
+                         <li>Booleans,Numbers ,Strings can be objects (if defined with the new keyword)</li>
+                         <li>Dates,Maths ,Regular expressions,Arrays ,Functions,Objects  are always objects</li>
+                         <li>All JavaScript values, except primitives, are objects.</li>
+                         <li>In JavaScript, only objects and arrays are mutable, not primitive values.</li>
+                         <li> object property assignments are not hoisted..</li>
+                     </ul>`;         
+                     
+                    }
+                     
+                     
+                    
+     function Arrays()
+     { para.style.color="green";
+        para.innerHTML=` <ul>
+                           <li>In JavaScript, array is a single variable that is used to store different elements. It is often used when we want to store list of elements and access them by a single variable.</li>
+                           <li> an array can hold values of different types. For example, you can have an array that stores the number and string, and boolean values.</li>
+                           <li> the length of an array is dynamically sized and auto-growing. In other words, you don’t need to specify the array size upfront.</li>
+                           <li>Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.</li>
+                           <li>You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:</li>
+                           <li>In JavaScript, arrays use numbered indexes while , objects use named indexes.</li>
+                           <li>arrays are mutable.</li>
+                        </ul>`;  
+                        
+     }
+
+function Functions()
+{     para.style.color="blue";
+  para.innerHTML=`   <ul>
+                       <li>A JavaScript function is a block of code designed to perform a particular task.</li>
+                       <li>A JavaScript function is executed when "something" invokes it (calls it).</li>
+                       <li>JavaScript provides functions similar to most of the scripting and programming languages.</li>
+                       <li>In JavaScript, a function allows you to define a block of code, give it a name and then execute it as many times as you want</li>
+                       <li>A function can return a literal value or another function.</li>
+                       <li>functions are mutable in Javascript, and can be modified after it is created.</li>
+                     </ul`;
+                      
+}
+
+function Strings()
+{  para.style.color="grey";
+   para.innerHTML=`   <ul>
+                        <li>A string can be any text inside double or single quotes:</li>
+                        <li>String indexes are zero-based: The first character is in position 0, the second in 1, and so on.</li>
+                        <li>The String object is used to represent and manipulate a sequence of characters.</li>
+                        <li>String literals can be specified using single or double quotes, which are treated identically, or using the backtick character  </li>
+                        <li>There are two ways to access an individual character in a string.
+                          <ul>
+                            <li> The first is the charAt() </li>
+                            <li> The other way is to treat the string as an array-like object, where individual characters correspond to a numerical index: </li>
+                          </ul> 
+                      </ul>`;
+                    }
+                    
+  function Numbers()
+   {  para.style.color="orange";
+       para.innerHTML=`  <ul> 
+                           <li>Unlike many other programming languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.</li>
+                           <li>JavaScript numbers are always stored as double precision floating point numbers, following the international IEEE 754 standard.</li>
+                           <li>If you add a string and a number, the result will be a string concatenation:</li>
+                           <li>NaN is a JavaScript reserved word indicating that a number is not a legal number.</li>
+                           <li>Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.</li>
+                           <li> Numbers are primitive data types , therefore they are immutable</li>
+                         </ul>`;
+    }
+
+
+  function Undefined()
+   {  para.style.color="brown";
+       para.innerHTML=`<ul>
+                            <li>A variable that has not been assigned a value is of type undefined</li>
+                            <li>typeof undefined === 'undefined';  => true</li>
+                            <li>undefined is a property of the global object. </li>
+                          </ul>`;
+    }
+
+ 
+    
+  function Null()
+   {     para.style.color="black";
+       para.innerHTML=`   <ul>
+                           <li>The value null represents the intentional absence of any object value. .</li>
+                           <li>It is one of JavaScript's primitive values and is treated as falsy for boolean operations</li>
+                           <li>typoef null is 'object'</li>
+                           <li>null is a special value in JavaScript that represents a missing object.</li>
+                           <li>Null is a primitive data types therefore it is immutable</li>
+                         </ul>`;
+    }
+    
+    
+    
+    
+    
+    container.append(para);
+    
+</script>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #BOX{
+            height:1000px;
+            width:45%;
+            margin: auto;
+            background-color: white;
+            
+        }
+
+        .box{
+            width:23%;
+            height:150px;
+             font-size: x-large;
+            margin:3% 15% 1% 10%;
+            text-align: center;
+            float: left;
+        }
+
+           .box1{
+            background-color: red;
+           width:100%;
+           height:100px; 
+            float: left; 
+            
+        }    
+         
+         #id1{
+             width:45%;
+             height:500px; 
+             float: left;
+             margin-left:25% ;
+             display: grid;
+             grid-template-columns: auto auto auto;
+             grid-template-rows: 70px 70px 70px 70px 70px 70px 70px;
+             grid-gap:5%;
+             
+         }
+         
+        .gridC{
+             background-color: green; 
+             text-align: center;
+         }
+        .orange{
+             background-color: orange; 
+             text-align: center;
+         }
+
+        .green{
+             background-color: green; 
+             text-align: center;
+         }
+
+        #score{
+             grid-area: 1/1/1/4;
+             font-size: x-large;
+             background-color: white;
+        }  
+
+        #scoreBox{
+             grid-area: 2/1/4/4;
+             font-size: xx-large;
+             background-color: grey;
+        }  
+
+        .white{
+            background-color: white;
+        }
+        .purple{
+            background-color: purple;
+        }
+   
+         #Enter{
+            grid-area: 8/1/9/4;
+            background-color: black;
+            font-size: x-large;
+            color:white;
+        }  
+
+        .box1 input{
+            width:95%;
+            height:100%;
+            text-align: center;
+            font-size: larger;
+            background-color: red;
+        }
+
+    </style>
+    <body style="background-color: black;">
+        <div id="BOX"> 
+             <div class="box">
+                <div class="box1" >
+                    <input id="MIN" value="43" >
+                </div> 
+                <h2 >MIN</h2>
+            </div>
+            <div class="box">
+                <div class="box1" id="box2 ">
+                    <input id="MAX" value="1997" >
+                </div> 
+                <h2 >MAX</h2>
+            </div> 
+            
+            <div id="id1">
+               
+                <div id="score" class="gridC  ">
+                    <h2>SCORE </h2>
+                </div>
+                <div id="scoreBox" class="gridC "> 
+                      <br>
+                      <input id="totalScore" value="#"  >
+                </div>
+                <div  class="gridC number">
+                    <h2> 1</h2>
+                </div>
+                <div class="orange number">
+                    <h2>2 </h2>
+                </div>
+                <div class="gridC number">
+                    <h2>3 </h2>
+                </div>
+                <div class="orange number">
+                    <h2> 4</h2>
+                </div>
+ 
+                <div class="orange number">
+                    <h2>5 </h2>
+                </div>
+                <div class="orange number">
+                    <h2> 6</h2>
+                </div>
+                <div class="gridC number">
+                    <h2>7</h2>
+                </div>
+                <div class="orange number">
+                    <h2>8</h2>
+                </div>
+                <div class="gridC number">
+                    <h2>9</h2>
+                </div>
+                <div class="white "></div> 
+
+                <div class="purple gridC number">
+                    <h2>0</h2>
+                </div>
+                <div class="white"></div> 
+ 
+                <div onclick="function1()" id="Enter" class="gridC">
+                    <h2>Enter</h2>
+                </div>
+                
+             
+            </div> 
+            
+        </div>   
+        
+    </body>
+</html>
+<script>
+
+    var total=0;
+    var min=Number( document.getElementById("MIN").value);
+    var max=Number(document.getElementById("MAX").value);
+
+    function addListner(){
+    var numbers=document.querySelectorAll(".number");
+    var score=document.getElementById("totalScore");
+
+    for(let i=0;i<numbers.length;i++)
+    {   
+        numbers[i].addEventListener("click",function2);
+        function function2()
+        {   
+            var n=(i+1)%10;    // this corresponds to individual digit
+            total=total*10+n;
+             score.value=total; 
+        }
+        
+    }
+}
+
+    function function1(){
+        if(total<min)
+         document.getElementById("MIN").value=total;
+         else if(total>max)
+         document.getElementById("MAX").value=total; 
+     }
+
+    addListner();
+</script>

@@ -1,0 +1,24 @@
+button{
+  width:8VW; 
+  margin-inline: 2VH;
+  padding:2%;
+  border-radius: 20px ;
+  border: none;
+   
+}
+
+.BOX{
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  background-color: aquamarine;
+  padding:5%;
+   
+}
+
+input{
+  padding:2%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}

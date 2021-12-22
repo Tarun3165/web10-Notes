@@ -1,0 +1,155 @@
+[
+    {
+        "image":"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yyrjmyajqhyjq6mp1gha",
+        "name":"Punjabi Dhaba",
+        "type":"North Indian",
+        "rating":"3.6",
+        "cost":"120",
+        "votes":"500",
+        "reviews":"300" ,
+        "cost_for_two":"220",
+        "payment_methods": {
+            "card": "true",
+            "cash": "true",
+            "upi": "true"
+        }
+
+    },
+
+    {
+        "image":"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yth7tw2jld4epg2pzmkw",
+        "name":"Biryani By Kilo",
+        "type":"Biryani, Mughlai, Kebabs, North Indian, Hyderabadi, South Indian",
+        "rating":"4.3",
+        "cost":"375",
+        "votes":"700",
+        "reviews":"600" ,
+        "cost_for_two":"700",
+        "payment_methods": {
+            "card": "true",
+            "cash": "false",
+            "upi": "true"
+        }
+
+    },
+
+    {
+        "image":"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/abr0wblbm1le41tdsz3n",
+        "name":"Burger Singh",
+        "type":"Snacks, Fast Food, Indian, American, Beverages, Desserts",
+        "rating":"3.8",
+        "cost":"375",
+        "votes":"240",
+        "reviews":"350" ,
+        "cost_for_two":"250",
+        "payment_methods": {
+            "card": "true",
+            "cash": "true",
+            "upi": "false"
+
+        }
+
+    },
+
+    {
+        "image":"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/zaiqmbghvok9jlilbskh",
+        "name":"DA MEXICAN PIZZA",
+        "type":"Italian, Pizzas",
+        "rating":"2.9",
+        "cost":"150",
+        "votes":"220",
+        "reviews":"233" ,
+        "cost_for_two":"299",
+        "payment_methods": {
+            "card": "false", 
+            "cash": "true",
+            "upi": "true"
+        }
+
+    },
+
+    {
+       "image":"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ylprorxf2gc0ijhz4x99",
+       "name":"Royal Bake House",
+       "type":"Bakery",
+       "rating":"4.2",
+       "cost":"150",
+       "votes":"570",
+       "reviews":"230" ,
+       "cost_for_two":" 290",
+       "payment_methods": {
+           "card": "true",
+           "cash": "false", 
+           "upi": "true"
+        }
+
+    },
+    
+    {
+       "image":"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qxamzaaaz2vnfmgogrpk",
+       "name":"The Pizza Live",
+       "type":"Continental",
+       "rating":"4.1",
+       "cost":"130",
+       "votes":"450",
+       "reviews":"240" ,
+       "cost_for_two":" 250",
+       "payment_methods": {
+        "card": "true",
+        "cash": "false", 
+        "upi": "false"
+        }
+
+    },
+
+    {
+       "image":"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/z1rng80svjqb99565xst",
+       "name":"The Belgian Waffle Co.",
+       "type":"Desserts, Beverages",
+       "rating":"3.9",
+       "cost":"100",
+       "votes":"570",
+       "reviews":"430" ,
+       "cost_for_two":" 200",
+       "payment_methods": {
+        "card": "false",
+           "cash": "false", 
+           "upi": "true"
+        }
+
+    },
+    {
+       "image":"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ygczg6efdbjietl1req7",
+       "name":"Aman Vegetarian",
+       "type":"Desserts, Beverages",
+       "rating":"3.9",
+       "cost":"170",
+       "votes":"340",
+       "reviews":"430" ,
+       "cost_for_two":" 275",
+       "payment_methods": {
+        "card": "true",
+        "cash": "true",
+           "upi": "true"
+        }
+
+    
+    },
+    {
+       "image":"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/nvrgthlvykbimimrkvyl",
+       "name":"YAARAN DI GRILL",
+       "type":"Indian, Chinese, Tandoor",
+       "rating":"3.4",
+       "cost":"150",
+       "votes":"390",
+       "reviews":"40" ,
+       "cost_for_two":" 230",
+       "payment_methods": {
+        "card": "true",
+        "cash": "false",
+           "upi": "true"
+        }
+
+    }
+
+]

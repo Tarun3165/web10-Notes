@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+      #detailDiv{
+        width:70%;
+        margin: auto;
+      }
+     #divTitle{
+        font-weight: 700;
+        font-size: 4VH;
+    }   
+
+    #divImage>img{
+      width:100%;
+    }   
+</style>
+<body>
+     
+<div id="detailDiv"></div>
+</body>
+</html>
+<script type="module"> 
+import {getData,DetailAppendData} from "./script/body.js"
+ 
+ let res=getData(`https://newsapi.org/v2/everything?q=tesla&from=2021-07-09&sortBy=publishedAt&apiKey=0ec06393b86d4131bc29abc406c044ec`)
+ res.then((data)=>{
+     console.log('data:', data)
+    let parent =document.getElementById("detailDiv")
+    DetailAppendData(parent,data)
+ })
+   
+  
+   
+ </script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #number{
+        width:20px;
+        height:20px;
+        background-color: rgb(220, 226, 226);
+        margin:20px;
+        text-align: center;
+        padding:30px;
+    }
+</style>
+<body>
+    
+    <button id="Throw" onclick="dice()" >Throw Dice</button>
+    <div id="number"> #</div>
+</body>
+</html>
+<script>
+    
+    function dice()
+    {
+      var number=document.getElementById("number");
+      number.style.fontSize="20px";
+      var x=random(6);
+      if(x==1)
+      number.style.color="red"
+      else if(x==2)
+      number.style.color="blue"
+      else if(x==3)
+      number.style.color="brown"
+      else if(x==4)
+      number.style.color="yello"
+      else if(x==5)
+      number.style.color="grey"
+      else if(x==6)
+      number.style.color="green"
+
+      number.textContent=x;
+
+    }
+
+    
+
+    function random(number)
+    {   
+         var n=Math.floor(Math.random()*number)
+         if(n>0)
+        return n;
+        else
+         return 1;
+    }
+</script>

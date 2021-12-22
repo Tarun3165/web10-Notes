@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <body>
+      <label><b>Select Any Country</b></label>
+       <select onclick="checkContinet()"  id = "countrySelect">
+        <option > ---------Choose--------- </option>    
+        <option value = "India"> India </option>    
+        <option value = "USA"> United States of America </option>    
+        <option value = "Nepal"> Nepal </option>    
+        <option value = "Australia"> Australia </option>    
+        <option value = "France"> France </option>    
+        <option value = "Germany"> Germany </option>    
+        <option value = "SouthAfrica"> South Africa </option>    
+        <option value = "Nigeria"> Nigeria </option>    
+        <option value = "Mexico"> Mexico </option>    
+        <option value = "Argentina"> Argentina </option>    
+        <option value = "Brazil"> Brazil </option>    
+        <option value = "Canada"> Canada </option>    
+        <option value = "Singapore"> Singapore </option>    
+        <option value = "Sweden"> Sweden </option>    
+    </select>  
+     
+    </body>
+</html>
+<script>
+   function checkContinet()
+ {
+    
+     var country=document.getElementById("countrySelect").value;  
+    //  console.log(country);
+     
+         
+     switch (country)
+     {  
+        case "India": 
+        case "Nepal": 
+        case "Singapore":
+        case "China": 
+            alert("The continent is Asia"); 
+            break;
+    
+         case "France":
+         case "Germany":
+         case "Sweden":
+         alert("The continent is Europe "); 
+         break;
+
+         case "Australia": 
+         alert("The continent is Oceania ");   
+         break;
+
+        case "SouthAfrica":
+        case "Nigeria":
+        alert("The continent is Africa ");   
+        break;
+
+        case "Argentina":
+        case "Brazil":
+        alert("The continent is southamerica");    
+        break;
+
+        case "USA" :
+        case "Mexico":
+        case "Canada":
+        alert("The continent is North America");             
+    }
+    
+
+
+}
+</script>

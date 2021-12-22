@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+     <body>
+         <h1>prison Security System</h1>
+         <!-- <button onclick="showAlert(`Main Door breach`)">Main Door breach</button>
+         <button onclick="showAlert(`run ,riot!`)">Prison Riot</button>
+         <button onclick="showAlert(`call fireExtinguesher`)">Fire Alarm</button>
+         <button onclick="showAlert(` everyone Hide `)">Firing</button>
+         <button onclick="showAlert(` call Ambulance`)">civilions injured </button> -->
+
+
+         <div id="messages"></div>
+         <input type="text"  id="custom_msg" placeholder="Enter custom alert">
+         <button onclick="showCustomAlert()">show message</button>
+     </body>
+    
+</html>
+<script>
+
+    // function showAlert(anythingIwant){
+    //     alert(anythingIwant);
+    // }
+     
+  
+      function showCustomAlert(){
+     var msg=document.getElementById("custom_msg").value;
+   //   console.log("msg:",msg);
+     var div=document.getElementById("messages");
+     div.innerHTML="";
+  //    div.append(msg);
+  //    div.innerHTML=msg;
+     var h1=document.createElement("h1");
+     h1.textContent=msg;
+  div.appendChild(h1);
+     
+}
+
+</script>

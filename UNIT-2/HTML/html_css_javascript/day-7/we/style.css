@@ -1,0 +1,9 @@
+img{
+
+    width:100%;
+}
+#data{
+    display:grid;
+    grid-template-columns: repeat(4,30%);
+    grid-gap: 5%;
+}

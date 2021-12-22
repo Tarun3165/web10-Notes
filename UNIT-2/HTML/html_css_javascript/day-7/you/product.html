@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        
+        padding: 1%;
+    }
+
+   *{
+    font-family: "Amazon Ember",Arial,sans-serif;
+    }
+    
+    #top{
+        display: flex;
+    }
+    
+    #heading{   
+        width:60%;
+        margin: auto; 
+    }
+    #button button{
+        height:5VH;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    #data{
+        display: grid;
+        grid-template-columns: repeat(4,21%);
+        grid-gap:5%; 
+        margin: auto;
+        padding: 1%; 
+        height:120VH;
+    }
+    img{
+        width:100%;
+        height: 32VH;
+        border-radius: 10px;
+    }
+   
+   #button img{
+     width:5VW;
+     height:8VH;
+   }
+    
+</style>
+<body> 
+    
+    <div id="top">
+        <div id="heading">
+            <h1>Product Galary</h1> 
+        </div> 
+       <div id="button"> 
+           <img onclick="showCart()" src="https://previews.123rf.com/images/dirkercken/dirkercken1403/dirkercken140301017/26968131-add-to-cart-button-start-shopping-now-icon-go-to-the-online-webshop-internet-web-button.jpg" alt="">
+        </div> 
+    </div>
+
+    
+    <div id="data"></div>
+</body>
+</html>
+<script src="product.js"></script>

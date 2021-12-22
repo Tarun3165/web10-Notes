@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+
+    #container{
+  width:65%; 
+  background-color: white;
+  margin: auto;
+  padding:2%;
+    }
+
+    #BOX{ 
+        width:100%; 
+        display: grid;
+        grid-template-columns: repeat(4,25%);
+        grid-template-rows: 13VH 79Vh;
+    }
+     
+    #box1{
+        grid-area: 1/1/2/5;
+        background-color: rgb(255,43,42);
+        margin-bottom:3%;
+    }
+    #box2{
+        background-color: rgb(86,212,0);
+        
+    }
+    #box3{
+        grid-area: 2/2/3/5;
+        background-color: rgb(33,120,103);
+        margin-left: 5%;
+    }
+    .box{
+         border-radius: 2%;
+         background-color: blue;  
+     }
+
+</style>
+<body>
+    
+    <div id="container">
+        <div id="BOX" >
+            <div id="box1" class="box"></div>
+            <div id="box2" class="box"></div>
+            <div id="box3" class="box"></div>
+            <div id="box4" class="box"></div>
+            <div id="box5" class="box"></div>
+        </div>
+    </div>
+</body>
+</html>

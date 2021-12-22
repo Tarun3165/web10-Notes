@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+    .mousePad{
+        width:45VW;
+        height:65VH;
+        background-color: rgb(10, 143, 173);
+        margin: auto;
+    }
+    .green{ 
+        background-color: green; 
+        width:45VW;
+        height:65VH;
+    }
+    .red{ 
+        background-color: red; 
+    }
+    #box{
+        background-color: green;
+        width:10VW;
+        height:10VH;
+        font-size: large;
+        border-radius: 10px;
+        margin-top:50VH;
+        margin-left:30Vw;
+    }
+</style>
+<body>
+    <div onmouseover="mouseOverBOX()" onmouseout="mouseOverBody()" id="BOX" class="mousePad">
+        <input id="box" type="submit" value="SUBMIT"  >
+    </div>
+</body>
+</html>
+<script>
+    function mouseOverBOX()
+    { var box=document.getElementById("box");
+       box.style.backgroundColor="red";
+    }
+     
+    function mouseOverBody()
+    {var box=document.getElementById("box");
+       box.style.backgroundColor="green";
+    } 
+</script>

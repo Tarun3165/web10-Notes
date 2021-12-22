@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetch </h1>
+</body>
+</html>
+<script>
+
+    // using .then() .catch()
+fetch("https://reqres.in/api/users?page=2")   // it is a promise because , it takes time and it can resolve or reject
+.then(function(res){
+   return res.json();             // res.json() is also a promise
+
+})
+.then(function (res){
+    console.log(res.data);   // for actual data
+})
+
+.catch(function(err){     // it will gives us error for the first error only out the 2 promices
+    console.log("err",err);
+})
+
+
+// using async await (better approach)
+ 
+// async  function makeRequest()
+// {
+//     try{ 
+//         var res=await fetch("https://reqres.in/api/users?page=2")  
+//         let data=await res.json()
+//         console.log(data); 
+//     }
+
+//     catch(err){              // try and catch for err
+//     console.log("err",err);
+//     }
+// }
+
+// makeRequest();
+    
+// can use it anywhere for detecting error
+try{
+    var x=10;
+    
+}
+catch(err){
+    console.log(err);
+}
+ 
+</script>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .parent{
+            display:grid;
+            grid-gap:2px;
+            padding:10px;
+            background-color: green;
+            grid-row: ;
+            grid-template:"a b"
+                          "b b"
+                          "c c"
+                          "d d"
+                          "e e";
+                          border: 1px solid black;
+        } 
+        /* @media(min-width:480px){
+            .parent{
+                background-color:red;
+            }
+        }
+        @media(min-width:600px){
+            .parent{
+                background-color:rgb(12, 12, 12);
+                grid-gap:10px;
+                grid-template:"a a"
+                              "b c"
+                              "e e"; 
+            }
+        }
+
+        @media(min-width:7680px){
+            .parent{
+                background-color:blue; 
+            }
+            #child2,#child3{
+            height:300px !important;
+        }
+
+        }
+        @media(min-width:7680px){
+            .parent{
+                background-color:pink;
+            }
+        } */
+
+.parent div{
+background-color: aqua;
+text-align: center;
+}
+ #child1{
+     grid-area:a;
+     background-color: yellow; 
+ }
+ 
+ #child2{
+     grid-area:b;
+     background-color: red; 
+ }
+ 
+ #child3{
+     grid-area:c;
+     background-color: purple; 
+ }
+ 
+ #child4{
+     grid-area:d;
+     background-color: pink; 
+ }
+ 
+ #child5{
+     grid-area:e;
+     background-color: blue; 
+ }
+ 
+ #child2,#child3{
+     height:100px;
+ }
+
+    </style>
+
+    <body>
+        
+        <div class="parent">
+            <div id="child1">Navigation</div>
+            <div id="child2">left</div>
+            <div id="child3">right</div>
+            <div id="child4">footer</div>
+            <div id="child5">footer</div>
+        </div>
+        </body>
+</html>

@@ -1,0 +1,59 @@
+h1{
+    text-align: center;
+}
+#jwellery_div{
+    display: grid;
+    grid-template-columns: repeat(3,31%);
+    margin: auto;
+}
+
+#jwellery_div div{
+    width:100%;
+    height:80VH;
+    
+    background-color: rgb(240, 239, 239);
+    margin:4%;
+    text-align: center;
+    border-radius: 5%;
+}
+
+  #jwellery_div img{
+    width:100%;
+    height:50VH;
+    margin:4%;
+    border-radius: 5%;
+} 
+#buyNow{
+  display: block;
+  margin:auto;
+  margin-top:5%;
+  margin-bottom:5%;
+}
+#payment{
+    width: 40%;
+    border:1px solid black;
+    margin: auto;
+    border-radius: 3%;
+    
+}
+#payment div{
+   margin: 4%;
+}
+#payNow{
+    display: block;
+    margin: auto;
+}
+
+#goToCart{
+    
+    float: right;
+}
+#sort{
+    width:25%;
+    margin: auto;
+}
+#buyNow{
+    width:10VW;
+    height:5VH;
+    background-color: green;
+}

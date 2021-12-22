@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+    //ES6 classes
+    //initialize a stack
+  class Stack{
+        constructor(){
+            this.stack=[];
+            this.length=0;
+        }
+        
+        //methods 
+        insert(...b)    // used spread operator to take multiple inputs in the form of arr . work for single element as well
+        {   b.forEach((el)=>{   
+            
+            this.stack.push(el);   
+            this.length++;
+        })
+      }
+      remove(){
+           this.stack.pop();
+           this.length--;
+      }
+      peek(){
+          let last=this.stack[this.length-1];
+          console.log(last);
+      }
+    }
+    let x=new Stack();
+    x.insert("Atomic Habits","Ikigai","Hamlet");
+    x.remove();
+     x.peek();
+    console.log('x:', x)
+  
+</script>

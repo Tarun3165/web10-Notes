@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+     font-family: sans-serif;
+    }
+    #searchContainer{
+        display: flex;
+        flex-direction: row;
+        margin:auto;
+        width:45%;
+        border:1px solid black;
+        border-radius: 10px;
+        margin-bottom: 4VH;
+    }
+    #searchDiv{
+        flex-basis: 95%; 
+        padding:1%;
+    }
+    #search{
+        width:100%; 
+        height:5VH;
+        font-size: 1.5VW;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+    }
+    #SearchIcon{
+        flex-basis: 10%;  
+      display: inline;  
+    }
+    #SearchIcon>img{
+      width:70%;
+    }
+    #newsData{
+        width:70%;
+        margin: auto;
+    }
+    #newsData>div{
+        display: flex;
+        flex-direction: row;
+        
+        border-top: 1px solid rgb(224, 221, 221);
+        margin:4px;
+        padding:2%;
+    }
+    #newsData>div>div{
+        flex-basis: 30%;
+        margin:5px;
+    }
+    #divTitle{
+        font-weight: 700;
+    }
+    #divImage>img{
+      width:100%;
+    }
+</style>
+<body>
+   
+</body>
+</html>
+<script type="module">
+import {searchBar} from "./component/searchBar.js"
+document.body.innerHTML=searchBar();
+import {getData,appendData} from "./script/body.js"
+ 
+let SearchIcon =document.getElementById("SearchIcon");
+SearchIcon.addEventListener("click",searchInput)
+
+function searchInput()
+{   
+    let parent =document.getElementById("newsData")
+    parent.innerHTML=null;
+        let search =document.getElementById("search").value;
+        console.log('search:', search)
+
+        let res=getData(`https://newsapi.org/v2/everything?q=${search}&apiKey=0ec06393b86d4131bc29abc406c044ec`)
+     res.then((data)=>{
+        console.log('data:', data)
+        appendData(parent,data)
+        res.catch(err)
+        {
+            console.log("err",err);
+        }
+          
+       })
+    
+    }
+ 
+    let res=getData(`https://newsapi.org/v2/top-headlines?country=us&apiKey=0ec06393b86d4131bc29abc406c044ec`)
+ res.then((data)=>{
+     console.log('data:', data)
+    let parent =document.getElementById("newsData")
+    appendData(parent,data)
+ })
+   
+         
+  </script>
+
+  <script>
+ 
+       function moreDetails(){
+         
+           var dataDiv=document.querySelectorAll(".dataDiv");  
+           
+           window.location.href="detailNews.html"
+       }
+       
+       function sizeincrease(){
+         
+           var dataDiv=document.querySelectorAll(".dataDiv");  
+           
+           for(let i=0;i<dataDiv.length;i++)
+           {
+            dataDiv[i].addEventListener("mouseover", ()=>{
+
+                dataDiv[i].style.backgroundColor="rgb(224, 221, 221)" 
+            });
+           }
+       }
+
+       function colorChange(){
+         
+           var dataDiv=document.querySelectorAll(".dataDiv");  
+           
+           for(let i=0;i<dataDiv.length;i++)
+           {
+
+               dataDiv[i].style.backgroundColor="white"
+           }
+       }
+ 
+    
+  </script>

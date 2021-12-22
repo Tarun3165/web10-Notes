@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     
+    
+   *{
+    font-family: "Amazon Ember",Arial,sans-serif;
+    }
+
+    #cart{ 
+        width:100%;
+        padding: 2%;
+        margin: auto;
+    }
+
+    #heading{
+        width:63%;
+        
+        float: left;
+        text-align: center; 
+         padding: 1%;
+    }
+    
+   
+    
+    #cartDetails{
+        width:30%;
+        border: 1px solid brown;
+        float: left;
+        text-align: center;
+        padding: 1%;
+    }
+
+    span{
+    font-size:1.5VW;
+    font-weight: 600;
+    margin-inline: 2%;
+    }
+
+    #data{
+        display: grid;
+        grid-template-columns: repeat(4,21%);
+        grid-gap:5%; 
+        margin: auto;
+        padding: 1%;
+        
+    }
+
+    img{
+        width:100%;
+        height:30VH;
+        border-radius: 10px;
+    }
+
+    #checkout{
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        margin: 5%;
+    }
+    #checkout button{
+        
+        
+        width:25VW;
+        height:5VH
+        
+    }
+    #promoDiv{
+       width:20%;
+        height:5VH; 
+        margin: auto;
+        margin-top:10VH ;
+        margin-bottom: 10VH;
+       
+    }
+   
+
+</style>
+<body>
+    <div id="cart"> 
+        <div id="heading"> 
+            <span>Welcome to the Cart</span>
+        </div>
+
+        <div id="cartDetails">
+            <span id="totalItems">total items=0</span>
+            <span id="totalPrice">total price=0</span>
+        </div>
+    </div>
+    <div id="promoDiv">
+        <!-- to take the value of input a button is also needed -->
+        <input type="text" id="promocode">        
+        <button  onclick="showCart()">Apply promocode</button>
+    </div> 
+
+
+    <div id="data"></div>
+    
+    <div id="checkout">
+        <button onclick="checkout()">Checkout</button>
+    </div>
+</body>
+</html>
+ 
+<script src="Cart.js"></script>

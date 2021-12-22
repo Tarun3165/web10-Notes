@@ -1,0 +1,169 @@
+<html>
+    <head>
+        <title>Unix</title>
+        <style>
+                
+                body{
+            background-color: black;
+            margin: 10px;
+   }
+  #container{
+      margin: auto;
+      background-color: white;
+      width:70%;
+      height:700px;
+    }
+
+ #div1{
+      height: 270px;
+      width: 350px;
+      background-color: rgb(231, 226, 226); 
+      margin: auto;
+  }
+
+  #div11{
+     color: rgba(36, 6, 156, 0.945);
+     font-size: xx-large;
+     text-align: center;
+     margin: 10px; 
+  }
+
+  #div1 img{
+    height: 130px; 
+    width: 100px;
+    margin-left: 120px; 
+    margin-top: 20px;
+  }
+
+  #div11{
+     color: rgba(36, 6, 156, 0.945);
+     font-size: xx-large;
+     text-align: center;
+     margin: 10px;
+  }
+
+  #div12{
+    font-size: x-large;
+    text-align: center;
+    margin: 20px;
+  }
+
+  #img1{
+     height: 130px;
+      width: 100px; 
+      float: left;  
+      margin-right:2%;
+  }
+
+  #div2{
+    width:75%;height:130px;background-color: white;margin: auto;padding:10px;margin-top:20px
+  }
+
+  #div21{ 
+    width: 82%; 
+     float: left;
+  }
+
+  #div211{
+    color: rgba(160, 19, 6, 0.945);font-size: xx-large;   
+  
+  }
+
+  #div212{
+    font-size: larger;   
+    
+  }
+
+  #div3{
+      height:150px;
+      display: flex;
+      background-color: rgb(228, 83, 17);
+      width:95%;
+      margin: auto;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding: 1%;
+      
+  }
+  #div31{ 
+    height:120px;
+     flex-direction: row;
+     flex-basis: 30%; 
+     padding:1%;
+     font-weight: 700;
+     font-size: larger;
+  }
+ 
+  #div32{
+      background-color: black  ;
+      height:100px;
+      width:1%;
+      margin-top: 20px;
+  }
+ 
+  #div31 h2{
+      color:white;
+  }
+  
+        </style>
+    </head>
+    <body>
+       <button onclick="createPage()">Create Page</button>
+       <div id="container"></div>
+    </body>
+</html>
+<script>
+    function createPage()
+    { 
+      var container=document.getElementById("container")
+
+      var div1=document.createElement("div");
+      div1.setAttribute("id","div1")
+      var img=document.createElement("img");
+      img.setAttribute("src","https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/linus.jpg")
+       var div11=document.createElement("div");
+       div11.setAttribute("id","div11")
+       div11.textContent=`Linus Torvalds`;
+       div11.style.fontWeight="600"; 
+       var div12=document.createElement("div");
+       div12.setAttribute("id","div12")
+     div12.textContent=`The creator of Linux & Git`;
+     div12.style.fontWeight="600";
+
+     div1.append(img,div11,div12);
+     
+     var div2=document.createElement("div");
+     div2.setAttribute("id","div2")
+     var img1=document.createElement("img");
+     img1.setAttribute("src","https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/khan.jpg")
+     img1.setAttribute("id","img1")
+     var div21=document.createElement("div");
+     div21.setAttribute("id","div21")
+     var div211=document.createElement("span");
+     div211.setAttribute("id","div211")
+     div211.textContent=`Sal Khan`;
+     div211.style.fontWeight="600";
+     var div212=document.createElement("span");
+     div212.setAttribute("id","div212")
+     div212.innerHTML=`<br>Salman Khan is the founder of the Khan Academy which has a mission of providing a free world class education for any one, anywhere`;
+
+     div21.append(div211,div212)
+     div2.append(img1,div21);
+
+     var div3=document.createElement("div");
+     div3.setAttribute("id","div3") 
+     var div31=document.createElement("div");
+     div31.setAttribute("id","div31")
+     div31.innerHTML=`<h2>Ken Thompson</h2><span >Designed and Implemented the original Unix operating system</span> `;
+     var div32=document.createElement("div");
+     div32.setAttribute("id","div32") 
+     var Ndiv31=document.createElement("div");
+     Ndiv31.setAttribute("id","div31") 
+     Ndiv31.innerHTML=` <h2 >Dennis Ritchie</h2><span >The creator of C programming language</span> `;
+      
+     div3.append( div31,div32,Ndiv31);
+
+      container.append(div1,div2,div3);
+         
+    }
+</script>

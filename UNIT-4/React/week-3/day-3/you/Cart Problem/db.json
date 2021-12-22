@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Dabur Honey :",
+      "image_url": "https://m.media-amazon.com/images/I/81hghkkAaSL._SL1500_.jpg",
+      "description": "It is 100% pure with no sugar adulteration.It is 100% compliant on all the 22 parameters mandated by FSSAI for testing honey.",
+      "price": 444
+    },
+    {
+      "id": 2,
+      "product_name": "Kellogg's K-Energy Bar - Choco Nutty",
+      "image_url": "https://m.media-amazon.com/images/I/61Q+s96w4ML._SL1000_.jpg",
+      "description": "POWER PACKED WITH PROTEIN FROM 55% NUTS & GRAINS - A good source plant protein, the much-needed essential nutrient required for maintenance of muscles and normal bones",
+      "price": 763
+    },
+    {
+      "id": 3,
+      "product_name": "Baidyanath Premium Bengali Cow Ghee",
+      "image_url": "https://m.media-amazon.com/images/I/6163fwbwVEL._SL1500_.jpg",
+      "description": "100% Pure Premium Cow Ghee Slowly Cooked to perfection - the process takes 3 days to make this ghee",
+      "price": 500
+    },
+    {
+      "product_name": "Kellogg's Corn Flakes Original",
+      "image_url": "https://m.media-amazon.com/images/I/71HsQr-pYjL._SL1500_.jpg",
+      "description": "Kellogg's Corn Flakes is a nourishing and tasty ready-to-eat breakfast cereal which is High in Iron, Vitamin C and key essential B group Vitamins such as B1, B2, B3, B6, B12 and Folate.",
+      "price": "300",
+      "id": 4
+    },
+    {
+      "product_name": "Nescafé Classic Coffee",
+      "image_url": "https://m.media-amazon.com/images/I/71PiszDkulL._SL1500_.jpg",
+      "description": "Start your day right with the first sip of this classic that awakens your senses to new opportunities",
+      "price": "285",
+      "id": 5
+    }
+  ],
+  "cart": [
+    {
+      "id": 2,
+      "product_name": "Kellogg's K-Energy Bar - Choco Nutty",
+      "image_url": "https://m.media-amazon.com/images/I/61Q+s96w4ML._SL1000_.jpg",
+      "description": "POWER PACKED WITH PROTEIN FROM 55% NUTS & GRAINS - A good source plant protein, the much-needed essential nutrient required for maintenance of muscles and normal bones",
+      "price": 763,
+      "quantity": 3
+    },
+    {
+      "id": 1,
+      "product_name": "Dabur Honey :",
+      "image_url": "https://m.media-amazon.com/images/I/81hghkkAaSL._SL1500_.jpg",
+      "description": "It is 100% pure with no sugar adulteration.It is 100% compliant on all the 22 parameters mandated by FSSAI for testing honey.",
+      "price": 444,
+      "quantity": 2
+    },
+    {
+      "product_name": "Nescafé Classic Coffee",
+      "image_url": "https://m.media-amazon.com/images/I/71PiszDkulL._SL1500_.jpg",
+      "description": "Start your day right with the first sip of this classic that awakens your senses to new opportunities",
+      "price": "285",
+      "id": 5,
+      "quantity": 2
+    }
+  ]
+}

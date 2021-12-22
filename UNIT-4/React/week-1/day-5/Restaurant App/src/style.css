@@ -1,0 +1,102 @@
+.BOX{
+    width:100%;
+    min-height:100VH;
+    background-color: rgb(255,255,255);
+    font-family: ProximaNova,Arial,Helvetica Neue,sans-serif;
+}
+
+.navbar{
+ display: flex;
+ flex-direction: row;
+}
+.navbar>button{
+    margin: 2VH;
+    color:blue;
+    text-decoration: solid;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 1.4VW;
+}
+
+.parentDiv{
+    display: grid;
+    grid-gap:3%;
+    padding:3%;
+    grid-template-columns: auto auto auto auto;
+    
+}
+
+.card{
+    margin-top: 3VH;
+    min-height:50VH;
+    padding:5%;
+  background-color: white;
+
+}
+.card:hover{
+   border: 1px solid rgb(155, 149, 149);
+  background-color: rgb(246, 246, 246);
+   
+}
+
+.card>img{
+ width:100%;
+}
+.name {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.type{
+    color: #686b78;
+    font-size: 13px;
+    margin-top: -12px; 
+}
+
+.popularity{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    font-size: 1.9vh;
+    height:5VH;
+}
+
+.payment{
+    font-size: 1.9vh;
+    margin-top: 2VH;
+    height:5VH; 
+}
+.payment>span{
+    margin-left: 2VH;
+}
+.cost{
+    
+    font-size: 1.9vh;
+}
+
+.c2,.c4{
+    margin-left: 4px;
+}
+
+.formDiv{
+    padding:0VW 15VW 0VW 15VW ;
+}
+
+.stars{
+    width:80%;
+    margin:auto;
+    display: flex;
+    justify-content: space-around;
+}
+.green{
+    background-color: rgb(130, 238, 130);
+}
+
+.red{
+    background-color:red;
+    
+
+}
+h1{
+    text-align: center;
+}

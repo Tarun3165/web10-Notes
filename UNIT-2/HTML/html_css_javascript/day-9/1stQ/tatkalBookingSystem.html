@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ div{
+   margin:3VH;
+    font-size: 1.5VW;
+    font-weight: 600;
+  }
+</style>
+<body>
+    <h1>Tatkal Booking System</h1>
+     
+
+    <button onclick="ckeckAvailability()">Notify me when Train is available</button>
+     
+    <div id="MtoG">Traim MtoG Passenger Count→</div>
+    <div id="BtoG">Traim BtoG Passenger Count→</div>
+    <div id="PtoG">Traim PtoG Passenger Count→</div>
+
+
+</body>
+</html>
+<script>
+
+let MtoG=["Dicaprio","Ronaldo","Messi","Elon","aman","tarun","rahul Gandhi","Babubhaiya","jethalal"];
+let BtoG=["Dicaprio","Ronaldo","Messi","Elon","aman","tarun","rahul Gandhi","Babubhaiya","jethalal"];
+let PtoG=["Dicaprio","Ronaldo","Messi","Elon","aman","tarun","rahul Gandhi","Babubhaiya","jethalal"];
+
+async function ckeckAvailability(){
+ 
+    let promise=new Promise(function(resolve,reject){
+
+        setInterval(function(){ 
+            
+        if(MtoG.length<5)
+        {
+            resolve("Train 1 is available");
+        }
+        else if(BtoG.length<5)
+        {
+            resolve("Train 2 is available");
+        }
+        else if(PtoG.length<5)
+        {
+            resolve("Train 3 is available");
+        }
+        
+      },500) ; 
+        
+    });  
+
+    let res=await promise;
+
+    alert(res)
+    window.location.href="Booking.html"
+}
+
+  function cancelTicket(){   // people are randomly cancelling the ticket
+
+   let train1=document.getElementById("MtoG"); 
+   train1.innerHTML=`Train MtoG Passenger Count-->${MtoG.length}`
+
+   let train2=document.getElementById("BtoG");
+   train2.innerHTML=`Train BtoG Passenger Count-->${BtoG.length}`
+
+   let train3=document.getElementById("PtoG");
+   train3.innerHTML=`Train PtoG Passenger Count-->${PtoG.length}`
+
+     
+   if(MtoG.length<5||BtoG.length<5||PtoG.length<5)
+   {
+       clearInterval(interval1)
+       
+   }
+
+  let cancelling_speed1=Math.ceil(Math.random()*5)
+  let cancelling_speed2=Math.ceil(Math.random()*5)
+  let cancelling_speed3=Math.ceil(Math.random()*5)
+
+  setTimeout(function(){ 
+    MtoG.pop();
+    console.log('MtoG:', MtoG)
+  },cancelling_speed1*1000);
+
+  setTimeout(function(){ 
+    BtoG.pop();
+    console.log('BtoG:', BtoG)
+  },cancelling_speed2*1000);
+
+  setTimeout(function(){ 
+    PtoG.pop();
+    console.log('PtoG:', PtoG)
+  },cancelling_speed3*1000);
+
+}
+
+ var interval1=setInterval(cancelTicket,1000); 
+ 
+ var count=0;     //to access arrays MtoG ,BtoG,PtoG 
+
+function bookTicket(){   // people are randomly Booking the ticket
+
+   count++;
+   if(count>=MtoG.length)
+   count=0;
+   if(MtoG.length<5||BtoG.length<5||PtoG.length<5)
+   {
+       clearInterval(interval2);
+     
+   }
+   
+   let booking_speed1=Math.ceil(Math.random()*5)
+   let booking_speed2=Math.ceil(Math.random()*5)
+   let booking_speed3=Math.ceil(Math.random()*5)
+
+   setTimeout(function(){ 
+     MtoG.push(MtoG[count]);  
+   },booking_speed1*1000);
+
+   setTimeout(function(){ 
+     BtoG.push(BtoG[count]);  
+   },booking_speed2*1000);
+
+   setTimeout(function(){ 
+     PtoG.push(PtoG[count]);   
+   },booking_speed3*1000);
+
+}
+
+var interval2=setInterval(bookTicket,2000); 
+
+</script>

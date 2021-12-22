@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    function createStudents(n,a)
+    {
+        this.name=n;
+        this.age=a;
+    }
+    var student1=new createStudents("raj",24);
+    // console.log('student1:', student1)
+
+    // crete a newspaper factory using constructer function
+
+    function Newspaper(h)
+    {
+        this.date=new Date()    // to get the real date
+        this.publication="TOI";
+        this.headline=h;
+
+    }
+
+    
+    for(let i=0;i<10;i++)
+    {
+        var n1=new Newspaper("petrol 120")
+        console.log('n1:', n1);
+
+    }
+
+    var x=new Date();    // inbuild constructor function
+    // datatype of x=object. since constructor function always return objects
+    
+
+
+    var s=new String('raj');   //although String is a primitive data type , but still here due to constructor function it is an object here
+     console.log('s:', s)
+     
+     console.log('s:', s.toString()) // this will convert to string again
+
+    //  line no. 46 - 49 is working internally when u write
+    var x="raj";
+
+    // javascript treat everyone as object. this means when ever we use S.charAt() and all those with dot it is actually a object and not a string and charAt( ) is a method of the object.
+    
+function Person(n,a){
+    this.name=n;
+    this.age=a;
+}
+ 
+// diference between call and bind is that call executes it immediately , but bind holds it and later if we can execute it
+
+function Teacher(n,a,s){
+   Person.call(this,n,a)   // this is doing the job to get  this.name=n;  this.age=a;
+  
+    this.subject=s
+}
+
+var t1=new Teacher("raj",24,"js")  // this points to t1
+console.log('t1:', t1)
+
+     
+
+</script>

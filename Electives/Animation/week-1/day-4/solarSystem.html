@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+     <style>
+         body{
+             background: url("https://c1.wallpaperflare.com/preview/430/227/672/milky-way-starry-sky-night-sky-star.jpg");
+             width: 100vW;
+             height: 100VH;
+             position: absolute;
+           
+
+         }
+         #sun{
+           width: 150px;
+           height: 150px;
+           background-color: rgb(253,213,12);
+           border-radius: 50%;
+           position: absolute;
+           top: calc(50% - 150px/2);
+           left:calc(50% - 150px/2);
+         }
+        
+         #venus{
+             --moveX:100px;
+           width: 20px;
+           height: 20px;
+           background-color: orangered;
+           border-radius: 50%;
+           position: absolute;
+           top: calc(50% - 20px/2);
+           left:calc(50% - 20px/2);
+           animation:  solarSystem 2s linear infinite ;
+         }
+         #mercury{
+           --moveX:150px;
+           width: 35px;
+           height: 35px;
+           background-color: grey;
+           border-radius: 50%;
+           position: absolute;
+           top: calc(50% - 35px/2);
+           left:calc(50% - 35px/2);
+           animation:  solarSystem 2.3s linear infinite ;
+         }
+         #earth{
+           --moveX:200px;
+           width: 60px;
+           height: 60px;
+           background-color: aquamarine;
+           border-radius: 50%;
+           position: absolute;
+           top: calc(50% - 60px/2);
+           left:calc(50% - 60px/2);
+           animation:  solarSystem 2.5s linear infinite ;
+         }
+         #mars{
+           --moveX:250px;
+           width: 50px;
+           height: 50px;
+           background-color: red;
+           border-radius: 50%;
+           position: absolute;
+           top: calc(50% - 50px/2);
+           left:calc(50% - 50px/2);
+           animation:  solarSystem 2.6s linear infinite ;
+         }
+         #jupitor{
+           --moveX:280px;
+           width: 80px;
+           height: 80px;
+           background-color: brown;
+           border-radius: 50%;
+           position: absolute;
+           top: calc(50% - 80px/2);
+           left:calc(50% - 80px/2);
+           animation:  solarSystem 3s linear infinite ;
+         }
+         #saturn{
+           --moveX:300px;
+           width: 60px;
+           height: 60px;
+           background-color: rgb(170,144,99);
+           border-radius: 50%;
+           position: absolute;
+           top: calc(50% - 60px/2);
+           left:calc(50% - 60px/2);
+           animation:  solarSystem 3.4s linear infinite ;
+         }
+         #uranus{
+           --moveX:320px;
+           width: 55px;
+           height: 55px;
+           background-color: rgb(1,171,227);
+           border-radius: 50%;
+           position: absolute;
+           top: calc(50% - 55px/2);
+           left:calc(50% - 55px/2);
+           animation:  solarSystem 3.6s linear infinite ;
+         }
+
+         @keyframes solarSystem {
+             from{
+               transform: rotate(0deg) translate(var(--moveX));
+             }
+             to{
+                transform: rotate(360deg) translate(var(--moveX));
+
+             }
+         }
+     </style>
+
+    <body>
+           
+        <div id="sun"></div>
+        <div id="venus"></div>
+        <div id="mercury"></div>
+        <div id="earth"></div>
+        <div id="mars"></div>
+        <div id="jupitor"></div>
+        <div id="saturn"></div>
+        <div id="uranus"></div>
+    
+    </body>
+
+</html>

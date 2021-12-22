@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #peopleCount{
+        margin-top: 5VH;
+        width:13VW;
+        background-color: aqua;
+        border:1px solid black;
+        border-radius: 3%;
+    }
+</style>
+<body>
+
+    <h1>Vaccine Booth Alert System</h1> 
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="age" placeholder="Enter Age">
+    <button onclick="register()">Register for Vaccination</button>
+    <div id="peopleCount">People Count</div>
+    <div id="vaccineCount">vaccine Count</div>
+</body>
+</html>
+
+<script>
+    let queue=["Dicaprio","Ronaldo","Messi","Elon","aman","ritwik","Abdul"]
+    var peopleCount=document.getElementById("peopleCount") ;
+    function register()
+    {
+        const name=document.getElementById("name").value
+        const age=document.getElementById("age").value
+        if(age>60)
+      queue.unshift(name) 
+       
+       else
+       queue.push(name)
+        
+         
+        let message=`${name} your registration is done , wait for your turn`
+        alert(message);
+        let promise=new Promise(function (resolve,reject){      //promice is a constructer function and it returns object
+                                     // we can use any other name for resolve and reject
+                                     setInterval(function()
+                                     {
+
+                if(queue[0]==name)    // keep checking turn has come or not
+                {
+                    resolve(`${name}, go take a jab now`); 
+                }
+                
+            },1000);
+        }); 
+
+        promise.then(function(res){
+            if(vaccines!=0)
+            alert(res);
+           });
+    }
+
+    
+    var vaccines=8;
+    function startVaccination(){
+        peopleCount.innerHTML=`People Count -->${queue.length-1}`
+        vaccineCount.innerHTML=`Vaccine Count -->${vaccines-1}`
+        queue.shift();     // people are getting vaccinated
+        vaccines--;
+        if(vaccines==0 && peopleCount>1)
+        alert("vaccine out of stock, visit tomorrow")
+        if(vaccines==0)
+        alert("all are vaccinated")
+        
+        if(queue.length==0||vaccines==0)
+        {
+            clearInterval(interval)
+        }
+        console.log('queue:', queue)
+    }
+
+  var interval=setInterval(startVaccination,3000) 
+</script>

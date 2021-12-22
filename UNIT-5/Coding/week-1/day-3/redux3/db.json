@@ -1,0 +1,30 @@
+{
+  "todos": [
+    {
+      "title": "learn React",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "learn typeScript",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "learn todo",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "costom hooks",
+      "status": false,
+      "id": 4
+    },
+    {
+      "title": "learn redux",
+      "status": false,
+      "id": 5
+    }
+  ],
+  "login": []
+}

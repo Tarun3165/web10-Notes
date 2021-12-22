@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    #parent{
+        width: 80%;
+        margin:auto;
+        border: 1px solid black;
+    }
+    #row1 ,#row3 {
+        text-align: center;
+    }
+   
+   
+    .img_block{
+        width:33%;
+        float:left;
+         
+    }
+    .img_block>img{
+width: 300px;
+height: 200px;
+    }
+    .img_block>span{
+clear: left;
+    }
+    #view_all{
+        height:25px;
+        background-color: orange;
+        color:white;
+        padding: 5px;
+    }
+    .button{
+        text-align: center;
+    }
+    </style>
+    <body>
+        <div id ="parent">
+            <div id="row1">
+                <a>News& update</a>
+                <h4>Our Blog Posts</h4>
+            </div>
+            <div id="row2">
+              <div class="img_block">
+                  <img src="https://www.masaischool.com/static/campus/location_1/91springboard_min_1.jpg">
+                  <span>29 January 2019</span>
+                  <span>Architecture Art Moderm</span>
+              </div>
+              <div class="img_block">
+                  <img src="https://www.masaischool.com/static/campus/location_1/91springboard_min_1.jpg">
+                  <span>29 January 2019</span>
+                  <span>Architecture Art Moderm</span>
+              </div>
+              <div class="img_block">
+                  <img src="https://www.masaischool.com/static/campus/location_1/91springboard_min_1.jpg">
+                  <span>29 January 2019</span>
+                  <span>Architecture Art Moderm</span>
+              </div>
+              <div>
+                  <div class="button">
+                      <a id=" view_all" >View All Post</a>
+                  </div>
+                  <div id="row3">
+                      <span class="a">Services</span>
+                      <h4 class="a"> Our Services</h4>
+                      <p>   </p>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </body>
+</html>

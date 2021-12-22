@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        #myForm{
+            margin:5%; 
+        }
+        
+        #myForm label{
+            margin:1%; 
+        }
+
+        div{
+             text-align: center;  
+         }
+         
+         div button{
+            margin-inline-end: 5%;
+         }
+         
+        img{
+            width:100%;
+        }
+    </style>
+       <h1>My first E Commerce Website</h1>
+       
+       <div>
+           <form id="myForm">
+               <label for="">Product Name</label>
+               <input type="text" id="name">
+               <label for="">Product Price</label>
+               <input type="text" id="price">
+               <label for="">image</label>
+               <input type="text" id="img">
+            </form>
+        </div>
+        
+        <div>
+            <button onclick="storeProduct()">Add Products</button>
+            <button onclick="showProducts()">show Products</button>
+        </div>
+    
+     
+</body>
+</html>
+<script src="form.js"></script>

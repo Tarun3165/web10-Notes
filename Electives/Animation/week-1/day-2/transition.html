@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+
+    @keyframes box6 {
+        from{
+         transform: translate(0px ,0px);
+         
+
+        }
+        to{
+            transform: translate(800px ,0px);
+            background-color: rgb(92, 67, 30);
+
+        }
+    }
+ 
+    .box6{
+        animation: 5s ease 0s 1 box6;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        transform: translate(0px ,0px);
+
+    }
+
+    .box5:hover{
+        animation: 2s ease-in-out 0s 1 box5;
+       
+         
+    }
+
+    @keyframes box5{
+        from{
+             background-color: black;
+          
+        }
+        to{
+             border-radius: 50%;
+             background-color: red;
+        }
+    }
+
+    .box5{
+      
+      width: 100px;
+      height: 100px; 
+      background-color: black;
+      margin-left: 20px;
+     
+    }
+    
+
+    @keyframes box4{
+        0%{
+            
+            transform:rotate(0deg)
+        }
+        
+        100%{
+              transform :rotate(360deg)
+        }
+    }
+    .box4:hover{
+        animation: 3s ease-in-out 0.3s 1 box4;
+    
+    }
+
+    .box4{
+      
+      width: 100px;
+      height: 100px;
+      background-color: brown;
+    }
+  
+    
+    @keyframes box3{
+        0%{
+           opacity :0;
+           transform: scale(1) translate(1000px,0px)
+
+        }
+        100%{
+            opacity :1;
+        transform: scale(1.5) translate(50px,0px);
+
+
+        }
+    }
+    .box3:hover{
+        animation: 2s ease-in-out 0s 1 box3;
+    }
+
+    .box3{
+        transform: scale(1) translate(1000px,0px);
+      width: 100px;
+      height: 100px;
+      background-color: yellowgreen;
+    }
+    
+
+    @keyframes box2{
+        0%{
+           opacity :0;
+        }
+        100%{
+            opacity :1;
+        }
+    }
+    
+   
+    .box2{
+      
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: green;
+      animation: 4s ease-in-out 0.5s 1 box2;
+    }
+
+    .box1:hover{
+        transform:rotate(360deg);
+        background-color: aqua;
+        transform: scale(1.2) translate(50px,50px);
+        transition-duration: 0.5s;
+    }
+
+    .box1{
+      
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+
+    </style>
+<body>
+    <div style="display: flex;">
+        <!-- hover -->
+        <div class="box1">box1 </div>  
+        <br>
+        <!-- on Load -->
+        <div class="box2">box2 </div>  
+        <br>
+        <!-- slide in -->
+        <div class="box3">box3 </div>
+        <br>
+        <!-- rotate -->
+        <div class="box4"> box4</div>
+        <br>
+        <!-- border-radius -->
+        <div class="box5">box5 </div>
+        <br>
+        <!-- translate on load with easing functions -->
+        <!-- ease  -->
+        <div class="box6">box6 </div>
+        <br>
+        <!-- ease in -->
+        <div class="box7">box7 </div>
+        <br>
+        <!-- ease out -->
+        <div class="box8">box8 </div>
+        <br>
+        <!-- ease in out -->
+        <div class="box9">box9 </div>
+        <br>
+        <!-- linear -->
+        <div class="box10">box10 </div>
+        <br>
+        <!-- custom cubic bezier curves -->
+        <div class="box11">box11 </div>
+    </div>
+
+</body>
+</html>

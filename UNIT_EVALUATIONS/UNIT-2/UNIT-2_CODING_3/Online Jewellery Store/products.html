@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>online Jwelery Store</h1>
+    <div id="search" style="margin: auto; width:20%; margin-bottom: 2VW;">
+        <input id="inputSearch" type="text" placeholder="search">
+        <button onclick="search()" id="enterSearch">Enter</button>
+    </div>
+    <div id="sort">
+        <button onclick="sortLH()" >Sort:price Low to High</button>
+        <button onclick="sortHL()">Sort:price High to Low  </button>
+    </div>
+    
+    <div id="filter_brand">
+        <label for="">Filter By Brand</label>
+        <select onclick="filter_Brand()" name="" id="selectBrand">
+            <option value="Sukkhi">Sukkhi</option>
+            <option value="All">All</option>
+            <option value="Generic">Generic</option>
+            <option value="YouBella">YouBella</option>
+            <option value="Matushri Art">Matushri Art</option>
+        </select>
+    </div>
+    <div id="filter_priceRange">
+        <label for="">filter by Price Range</label>
+        <select name="" id="selectRange">
+            <option id="range1" value="All">All</option>
+            <option id="range2" value="below 1000">below 1000</option>
+            <option id="range3" value="1000-2500">1000-4500</option>
+            <option id="range4" value="above 2500 ">above 2500</option>
+           
+        </select>
+    </div>
+    <button id="goToCart"onclick="showCart()">Go To Cart</button>
+</body>
+</html>
+<script src="products.js"></script>
+ 

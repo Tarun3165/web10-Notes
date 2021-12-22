@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #world{
+            display: grid;
+            grid-template-columns: 40% 40%;
+            
+             grid-gap:10%;
+            padding:5%; 
+        }
+        #country{
+           height:200px;
+            border: 1px solid black;
+        }
+
+    </style>
+    <body>
+        <div>
+            <h1>World map Guide</h1>
+        <div id="world">
+            <div id="country">India</div>
+            <div id="country">USA</div>
+            <div id="country">Australia</div>
+            <div id="country">Brazil</div>
+        </div>
+        </div>
+    </body>
+</html>
+<script>
+    
+    function addListeners(){
+     
+        var countries=document.querySelectorAll("#country")
+ 
+    for(let i=0;i<countries.length;i++)
+    {
+        // console.log("countries:",countries[i]);
+        countries[i].addEventListener("mouseover",function(){
+           
+            
+            countries[i].style.backgroundColor="red";
+            // alert( ` You are in ${countries[i].innerHTML}`);
+
+            
+            countries[i].addEventListener("mouseout",function(){
+            
+            // alert( ` You are in ${countries[i].innerHTML}`);
+            countries[i].style.backgroundColor="green";
+           
+        }) 
+           
+        })   
+    }
+
+   }   
+   
+    addListeners();
+</script>

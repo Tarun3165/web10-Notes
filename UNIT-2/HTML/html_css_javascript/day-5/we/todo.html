@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .done{
+        text-decoration: line-through;
+        color:green;
+    }
+    /* #tasks{ */
+        /*  console log of HTML */
+        /* border:1px solid black;    
+
+    } */
+
+   #countBox{
+       margin-left:50px;
+       height:50px; 
+       width:50px;
+       background-color: aqua;
+       text-align: center;
+   }
+   #toggle{
+       margin-left: 20px;
+   }
+
+</style>
+<body>
+    <h1>Todo list</h1>
+    <input   type="text" id="inp">
+    <button  onclick="addTask()">Add Task</button>
+    <input id="countBox"  >countBox</input>
+    <button onclick="toggle()" id="toggle">Toggle</button>
+
+    <div id="tasks"></div>
+     
+     
+    
+</body>
+</html>
+<script>
+ var tasks=document.getElementById("tasks");   // selecting the parant container
+ var countBox=document.getElementById("countBox");  
+var flag=1;
+ var id=0;
+ var count=0;
+
+    function addTask(){
+
+        
+            var task= document.getElementById("inp").value;
+            
+            
+            id=id+1; 
+            
+            var div=document.createElement("div");
+            
+            
+            div.innerHTML= `<p id="${id}">${task}</p><button onclick="Done(${id})">Done</button><button onclick="Remove(${id})">Remove</button>`;
+            
+            countBox.value=id;
+            tasks.append(div);    // put inside the parent  
+            
+            document.getElementById("inp").value="";
+ 
+    
+    }
+    
+    
+        function Done(i){ 
+            if(flag==1)
+            {
+                var clicked_p =document.getElementById(i);
+                clicked_p.setAttribute("class","done");
+            }
+            else{
+                var clicked_p =document.getElementById(i);
+                var div=clicked_p.parentElement;
+                div.remove();
+                id=id-1;
+                countBox.value=id;
+
+            }
+        }
+
+        function Remove(i)
+        {   if(flag==1)
+            { 
+                var clicked_p =document.getElementById(i);
+                var div=clicked_p.parentElement;
+                div.remove();
+                id=id-1;
+                countBox.value=id;
+                
+            }
+            else
+            {
+                var clicked_p =document.getElementById(i);
+                clicked_p.setAttribute("class","done");
+            }
+
+        }
+
+        function toggle(){
+            if(flag==1)
+            flag=0;
+            else
+            flag=1;
+        }
+</script>

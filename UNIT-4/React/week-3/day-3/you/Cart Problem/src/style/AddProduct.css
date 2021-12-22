@@ -1,0 +1,17 @@
+
+.formContainer{
+    
+   display: flex;
+   flex-direction: column;
+   width:50%;
+   margin: auto;
+   height: 25vh;
+   justify-content: space-between;
+}
+
+input{
+    padding:1%;
+}
+button{
+    padding: 1%;
+}

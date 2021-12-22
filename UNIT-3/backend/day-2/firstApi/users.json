@@ -1,0 +1,32 @@
+[  
+
+ {  "id":1,
+    "first_name":"Meris",
+    "last_name":"Zanneli",
+    "email":"mzanneli0@cbslocal.com",
+    "gender":"Female",
+    "ip_address":"69.203.163.201"
+}, 
+
+{   "id":2,
+    "first_name":"Artemis",
+    "last_name":"Dundendale",
+    "email":"adundendale1@smh.com.au",
+    "gender":"Agender",
+    "ip_address":"78.219.128.112" 
+},
+{   "id":3,
+    "first_name":"Timoteo",
+    "last_name":"Hiscoe",
+    "email":"thiscoe2@flavors.me",
+    "gender":"Polygender",
+    "ip_address":"128.211.172.245" 
+},
+{   "id":4,
+    "first_name":"Greg",
+    "last_name":"Morigan",
+    "email":"gmorigan3@tripod.com",
+    "gender":"Polygender",
+    "ip_address":"89.191.81.92" 
+} 
+]

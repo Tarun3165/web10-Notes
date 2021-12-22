@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prototype and Inheritence</h1>
+</body>
+</html>
+<script>
+    /*
+  const cat={
+      type:"cat",
+      legs:4,
+      claws:"sharp",
+      tail:true,
+      food:"carnivorus",
+
+  }
+ 
+//  const tiger= Object.create(cat);
+//  const lion= Object.create(cat);
+//  tiger.canClimb=false;
+
+ 
+
+const tiger=Object.setPrototypeOf(    // set protype is setting the properties in the tiger proto
+    {
+        name:"tiger",
+        canClimb:false,
+        claws:"blunt",
+
+    },cat    // parent 
+    );
+  
+console.log(tiger.claws);  // prototype chain. here it doesnot goes to parent becz it will first check if it contains that property only then it goes to check for parents properties  */
+
+function iphone13(){
+    this.name="iphone13";
+    this.year=2022;
+    this.factory="India";
+}
+
+const i1=new iphone13();
+iphone13.prototype.buildFaceId=function(){
+console.log("face id installed");
+}
+
+iphone13.prototype.camera="20MP";
+iphone13.prototype.add5G=function(){
+    this.Five_G=true;
+}
+
+i1.buildFaceId();
+console.log('i1:', i1.camera)
+
+console.log("i1",i1);
+
+
+  
+</script>

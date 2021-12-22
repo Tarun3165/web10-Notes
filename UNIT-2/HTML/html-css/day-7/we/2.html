@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <style>
+       .BOX1{
+           display: flex;
+           width:50%;
+           margin: auto; 
+       }
+
+       .BOX1 div{
+         
+           height:100px;
+           background-color: teal;
+           padding:20px;
+           margin:15px;
+           border-radius: 5px;
+       }
+
+       #box1{
+           flex-basis:20%;
+       }
+       #box2{
+           flex-basis:50%;
+       }
+       #box3{
+           flex-basis:20%;
+       }
+    </style>
+    <body>
+        <br>
+        <div class="BOX1">
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+        </div>
+        <div class="BOX1">
+            <div id="box2"></div>
+            <div id="box1"></div>
+            <div id="box3"></div>
+        </div>
+        <div class="BOX1">
+            <div id="box1"></div>
+            <div id="box3"></div>
+            <div id="box2"></div>
+        </div>
+    </body>
+</html>

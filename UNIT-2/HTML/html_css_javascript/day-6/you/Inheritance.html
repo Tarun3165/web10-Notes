@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <h1>inheritence and Prototype</h1>
+</body>
+</html> 
+
+<script>
+
+ const grandfather={
+     height:"tall",
+     mothertoungue: "hindi",
+      nationality: "hindu",
+     eyeColor: "black",
+     skill: "teaching",
+    
+}
+
+ const father=Object.setPrototypeOf(     //Object.setPrototypeOf() method sets the prototype of a specified object to another object or null.
+   {                                   // father is the object which is to have its prototype set.
+     skill:"mechanic",
+     height:"tall", 
+
+   },grandfather          // grandfather  is the object's new prototype (an object or null).
+ );
+
+//  const father=Object.create(father)
+  
+ 
+const son=Object.create(father)    //Object.create() is used for implementing inheritance.  
+                                  // Object.create() method returns a new object with the specified prototype object and properties.
+
+son.age=24;
+son.eyeColor="brown";
+son.height="short";
+
+
+ console.log('son:', son)
+ 
+ 
+
+ 
+</script>

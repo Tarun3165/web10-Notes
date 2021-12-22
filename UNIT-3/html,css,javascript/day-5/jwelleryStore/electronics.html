@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="style.css">
+
+   
+  <body>
+     
+  </body>
+</html>
+<script type="module">
+    import myNavbar from "./components/navbar.js"
+    
+     
+    import {getData,appendData }from "./scripts/showData.js"
+    document.body.innerHTML=myNavbar();
+    
+    /*    myNavbar().then(()=>{
+            it may be possible that html part is taking time in that case we can make it a promise , when html part is done only then append Data will happen . also in that case navbar should be async                                              
+       })
+    */
+ 
+    let response=getData('https://fakestoreapi.com/products/category/electronics')
+    // console.log('response:', response)
+    response.then((data)=>{
+        //  console.log('data:', data)
+        let parent=document.getElementById("data")
+        appendData(data,parent)  ;
+    })
+
+</script>

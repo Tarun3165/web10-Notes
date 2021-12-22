@@ -1,0 +1,291 @@
+//mongodb operations
+
+db.users.insert({first_name:"shubham",last_name:"sharma",age:5,email:"shub@gmail.com",gender:"male",ip_address:"127.0.0.1"})
+
+db.users.insertMany([{first_name:"simran",last_name:"thakur",age:22,email:"simran@gmail.com",gender:"female",ip_address:"127.0.0.1"},
+{first_name:"suman",last_name:"negi",age:26,email:"suman@gmail.com",gender:"female",ip_address:"127.0.0.1"},
+{first_name:"priya",last_name:"rawat",age:25,email:"priya@gmail.com",gender:"female",ip_address:"127.0.0.1"},
+{first_name:"mayank",last_name:"rajput",age:24,email:"mayank@gmail.com",gender:"male",ip_address:"127.0.0.1"},
+{first_name:"siddhart",last_name:"sharma",age:23,email:"sidhu@gmail.com",gender:"male",ip_address:"127.0.0.1"},
+{first_name:"thakur",last_name:"chandan",age:24,email:"chandan@gmail.com",gender:"male",ip_address:"127.0.0.1"},
+{first_name:"nimi",last_name:"rawat",age:26,email:"nimi@gmail.com",gender:"female",ip_address:"127.0.0.1"},
+{first_name:"tarun",last_name:"rawat",age:24,email:"tarun@gmail.com",gender:"male",ip_address:"127.0.0.1"},
+{first_name:"aman",last_name:"rawat",age:20,email:"aman@gmail.com",gender:"male",ip_address:"127.0.0.1"}])
+
+
+ 
+ db.users.findOne({age:24})
+
+{
+        "_id" : ObjectId("611bc74e520ba6268908658c"),
+        "first_name" : "mayank",
+        "last_name" : "rajput",
+        "age" : 24,
+        "email" : "mayank@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+
+ db.users.find({age:24}).pretty()
+{
+        "_id" : ObjectId("611bc74e520ba6268908658c"),
+        "first_name" : "mayank",
+        "last_name" : "rajput",
+        "age" : 24,
+        "email" : "mayank@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658e"),
+        "first_name" : "thakur",
+        "last_name" : "chandan",
+        "age" : 24,
+        "email" : "chandan@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba62689086590"),
+        "first_name" : "tarun",
+        "last_name" : "rawat",
+        "age" : 24,
+        "email" : "tarun@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+
+
+> db.users.remove({first_name:"thakur"},1)
+ 
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("611bc734520ba62689086588"),
+        "first_name" : "shubham",
+        "last_name" : "sharma",
+        "age" : 5,
+        "email" : "shub@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba62689086589"),
+        "first_name" : "simran",
+        "last_name" : "thakur",
+        "age" : 22,
+        "email" : "simran@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658a"),
+        "first_name" : "suman",
+        "last_name" : "negi",
+        "age" : 26,
+        "email" : "suman@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658b"),
+        "first_name" : "priya",
+        "last_name" : "rawat",
+        "age" : 25,
+        "email" : "priya@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658c"),
+        "first_name" : "mayank",
+        "last_name" : "rajput",
+        "age" : 24,
+        "email" : "mayank@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658d"),
+        "first_name" : "siddhart",
+        "last_name" : "sharma",
+        "age" : 23,
+        "email" : "sidhu@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658f"),
+        "first_name" : "nimi",
+        "last_name" : "rawat",
+        "age" : 26,
+        "email" : "nimi@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba62689086590"),
+        "first_name" : "tarun",
+        "last_name" : "rawat",
+        "age" : 24,
+        "email" : "tarun@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba62689086591"),
+        "first_name" : "aman",
+        "last_name" : "rawat",
+        "age" : 20,
+        "email" : "aman@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+
+db.users.updateMany({age:24},{$set:{graduated:"yes"}})
+ 
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("611bc734520ba62689086588"),
+        "first_name" : "shubham",
+        "last_name" : "sharma",
+        "age" : 5,
+        "email" : "shub@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba62689086589"),
+        "first_name" : "simran",
+        "last_name" : "thakur",
+        "age" : 22,
+        "email" : "simran@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658a"),
+        "first_name" : "suman",
+        "last_name" : "negi",
+        "age" : 26,
+        "email" : "suman@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658b"),
+        "first_name" : "priya",
+        "last_name" : "rawat",
+        "age" : 25,
+        "email" : "priya@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658c"),
+        "first_name" : "mayank",
+        "last_name" : "rajput",
+        "age" : 24,
+        "email" : "mayank@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1",
+        "graduated" : "yes"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658d"),
+        "first_name" : "siddhart",
+        "last_name" : "sharma",
+        "age" : 23,
+        "email" : "sidhu@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658f"),
+        "first_name" : "nimi",
+        "last_name" : "rawat",
+        "age" : 26,
+        "email" : "nimi@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba62689086590"),
+        "first_name" : "tarun",
+        "last_name" : "rawat",
+        "age" : 24,
+        "email" : "tarun@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1",
+        "graduated" : "yes"
+}
+{
+        "_id" : ObjectId("611bc74e520ba62689086591"),
+        "first_name" : "aman",
+        "last_name" : "rawat",
+        "age" : 20,
+        "email" : "aman@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+>
+> db.users.deleteOne({first_name:"mayank"})
+
+
+> db.users.deleteMany({age:24})
+ db.users.find().pretty()
+{
+        "_id" : ObjectId("611bc734520ba62689086588"),
+        "first_name" : "shubham",
+        "last_name" : "sharma",
+        "age" : 5,
+        "email" : "shub@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba62689086589"),
+        "first_name" : "simran",
+        "last_name" : "thakur",
+        "age" : 22,
+        "email" : "simran@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658a"),
+        "first_name" : "suman",
+        "last_name" : "negi",
+        "age" : 26,
+        "email" : "suman@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658b"),
+        "first_name" : "priya",
+        "last_name" : "rawat",
+        "age" : 25,
+        "email" : "priya@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba6268908658f"),
+        "first_name" : "nimi",
+        "last_name" : "rawat",
+        "age" : 26,
+        "email" : "nimi@gmail.com",
+        "gender" : "female",
+        "ip_address" : "127.0.0.1"
+}
+{
+        "_id" : ObjectId("611bc74e520ba62689086591"),
+        "first_name" : "aman",
+        "last_name" : "rawat",
+        "age" : 20,
+        "email" : "aman@gmail.com",
+        "gender" : "male",
+        "ip_address" : "127.0.0.1"
+}
+
+ db.users.drop()
