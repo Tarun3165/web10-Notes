@@ -22,9 +22,7 @@
   
 </style>
 <body>
-    <div  id="scroll">
-       
-    </div>
+    <div  id="scroll"></div>
 </body>
 </html>
 <script>
@@ -33,25 +31,39 @@
    
     let count=0;
     let sum=0;
+    
     loadMore();
     function loadMore(){
+
         for(let i=1;i<25;i++)
         {  
-           let h=document.createElement("h3");
-           sum+=1;
-           h.innerHTML=`Masai Student ${sum}`;
-           scroll.append(h)
+            let h=document.createElement("h3");
+            sum+=1;
+            h.innerHTML=`Masai Student ${sum}`;
+            scroll.append(h)
         }
     }
 
-   function myFunction(){
-     
-        const scrollable=document.documentElement.scrollHeight-window.innerHeight;
-        // console.log('scrollable:', scrollable)
+    let h=document.createElement("h3");
+    h.innerHTML=`Loading ...`;
+    function myFunction(){
+       let loading=true;
+        const scrollHeight=document.documentElement.scrollHeight;
+        const innerHeight=window.innerHeight;
+        const scrollable=scrollHeight-innerHeight;
         const scrolled=window.scrollY
-        // console.log('scrolled:', scrolled)
+        console.log('scrollHeight:',scrollHeight,'innerHeight:', innerHeight,'scrollable:', scrollable ,"scrolled",scrolled)
+
         if(scrolled>=scrollable-2)
-        loadMore();
+       {  setTimeout(() => {
+           scroll.removeChild(h);
+            loadMore();
+            loading=false;
+          }, 2000);
+          if(loading)
+            scroll.append(h)
+           
+        }
        
    
     }
